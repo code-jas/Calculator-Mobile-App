@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="0dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/result_secondLevel"
+        android:layout_width="343dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="-10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="@string/result_secondLevel"
+        android:textAlignment="textEnd"
+        android:textColor="@color/displayTextColor_Light"
+
+        android:textSize="19sp"
+        app:layout_constraintBottom_toTopOf="@+id/result_firstLevel"
+        app:layout_constraintEnd_toEndOf="@+id/result_firstLevel"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/result_firstLevel" />
+
+    <TextView
+        android:id="@+id/result_firstLevel"
+        android:layout_width="344dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="0dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/result_firstLevel"
+        android:textAlignment="textEnd"
+        android:textColor="@color/displayTextColor_Light"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMinTextSize="40sp"
+        android:autoSizeMaxTextSize="55sp"
+        android:autoSizeStepGranularity="2sp"
+        android:textSize="65sp"
+        android:maxLength="15"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@+id/cardViewCalculatorKeys"
+        app:layout_constraintEnd_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/result_secondLevel"
+        app:layout_constraintVertical_bias="0.53" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewCalculatorKeys"
+        android:layout_width="match_parent"
+        android:layout_height="563dp"
+        android:layout_marginBottom="-42dp"
+        app:cardBackgroundColor="@color/cardViewKeys_light"
+        app:cardCornerRadius="35dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/rowLayout1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/rowLayout2"
+                app:layout_constraintEnd_toEndOf="@+id/rowLayout2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/rowLayout2">
+
+                <!--   android:text="←" -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnClear"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:gravity="center"
+                    android:text="@string/clear"
+                    android:textAlignment="center"
+                    android:textColor="@color/firstRowColor"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBack"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_bold"
+
+                    android:gravity="center"
+                    android:text=""
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="23sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp"
+                    app:icon="@drawable/ic_launcher_foreground"
+                    app:iconGravity="textStart"
+                    app:iconPadding="3dp"
+                    app:iconSize="70dp"
+                    app:iconTint="#55FADC"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPercent"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/percent"
+                    android:textAlignment="center"
+                    android:textColor="@color/firstRowColor"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDivide"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/divide"
+                    android:textAlignment="center"
+                    android:textColor="@color/operatorColor"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/rowLayout3"
+                app:layout_constraintEnd_toEndOf="@+id/rowLayout3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/rowLayout3">
+
+                <com.google.android.material.button.MaterialButton
+
+                    android:id="@+id/btnSeven"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/seven"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEight"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/eight"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNine"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/nine"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnTimes"
+                android:layout_width="70dp"
+                android:layout_height="85dp"
+                android:layout_marginBottom="9dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:paddingLeft="0dp"
+                android:paddingTop="0dp"
+                android:paddingRight="0dp"
+                android:paddingBottom="0dp"
+                android:text="@string/times"
+                android:textAlignment="center"
+                android:textColor="@color/operatorColor"
+                android:textSize="40sp"
+                app:backgroundTint="@color/cardViewKeys_light"
+                app:cornerRadius="20dp"
+                app:elevation="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/rowLayout3"
+                app:layout_constraintStart_toEndOf="@+id/rowLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/rowLayout1" />
+
+            <LinearLayout
+                android:id="@+id/rowLayout3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/rowLayout4"
+                app:layout_constraintEnd_toEndOf="@+id/rowLayout4"
+                app:layout_constraintStart_toStartOf="@+id/rowLayout4">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFour"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/four"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFive"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/five"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSix"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/six"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMinus"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/minus"
+                    android:textAlignment="center"
+                    android:textColor="@color/operatorColor"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowLayout4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toTopOf="@+id/rowLayout5"
+                app:layout_constraintEnd_toEndOf="@+id/rowLayout5"
+
+                app:layout_constraintStart_toStartOf="@+id/rowLayout5">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOne"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/one"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnTwo"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/two"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnThree"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/three"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPlus"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/plus"
+                    android:textAlignment="center"
+                    android:textColor="@color/operatorColor"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/rowLayout5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="70dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <!--                <com.google.android.material.button.MaterialButton-->
+                <!--                    android:id="@+id/button"-->
+                <!--                    android:layout_width="70dp"-->
+                <!--                    android:layout_height="85dp"-->
+                <!--                    android:layout_marginRight="20dp"-->
+                <!--                    android:fontFamily="@font/poppins_bold"-->
+                <!--                    android:text="+/-"-->
+                <!--                    android:textAlignment="center"-->
+                <!--                    android:textSize="25sp"-->
+                <!--                    app:cornerRadius="20dp" />-->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDecimal"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/decimal"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnZero"
+                    android:layout_width="70dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/zero"
+                    android:textAlignment="center"
+                    android:textColor="@color/displayTextColor_Light"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnEqual"
+                    android:layout_width="160dp"
+                    android:layout_height="85dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="9dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="@string/equal"
+                    android:textAlignment="center"
+                    android:textColor="@color/operatorColor"
+                    android:textSize="25sp"
+                    app:backgroundTint="@color/cardViewKeys_light"
+                    app:cornerRadius="20dp"
+                    app:elevation="10dp" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="left"
+                app:constraint_referenced_ids="rowLayout1" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="268dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="367dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="632dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
